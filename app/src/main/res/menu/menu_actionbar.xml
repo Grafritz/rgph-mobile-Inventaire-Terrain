@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- "Mark Favorite", should appear as action button if possible -->
+
+    <item android:id="@+id/btn_actionbar_Nouveau"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/label_Nouveau"
+            app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/btn_actionbar_Sauvegarder"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="@string/Label_Sauvegarder"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/btn_actionbar_Annuler"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="@string/Label_Annuler"
+        app:showAsAction="ifRoom|withText" />
+</menu>
+
+
+
+<!-- Lafalaise_modify_
+  Boutton Annuler , Sauvegarde _ font color Whrite-->

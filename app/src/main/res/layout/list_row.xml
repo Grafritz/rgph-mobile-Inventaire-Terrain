@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:paddingLeft="8dp"
+    android:paddingRight="16dp"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    tools:context=".DisplayListActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_batiment"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/title"
+        android:textColor="@color/colorBlack"
+        android:paddingLeft="5dp"
+        android:paddingTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:layout_toRightOf="@+id/imageView"
+        android:textSize="18dp"
+
+        android:text="title"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_below="@id/title"
+        android:paddingLeft="40dp"
+        android:paddingTop="0dp"
+        android:textSize="14dp"
+        android:paddingRight="50dp"
+        android:textColor="@color/colorGray"
+        android:typeface="sans"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="z" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true" >
+
+        <ImageView
+            android:id="@+id/overflowIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/dots_vertical"/>
+    </LinearLayout>
+</RelativeLayout>

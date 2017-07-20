@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DisplayListActivity">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_action_search"
+        android:orderInCategory="100"
+        android:title="@string/abc_search_hint"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_RefreshList"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:orderInCategory="100"
+        android:title="@string/label_RefreshList"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_ListeAllSDE"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:orderInCategory="100"
+        android:title="@string/label_Tous_Les_SDE"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_ListeSDEParFormulaire"
+        android:icon="@android:drawable/btn_star"
+        android:orderInCategory="100"
+        android:title="@string/label_Afficher_SDE_ParFormulaire"
+        app:showAsAction="always" />
+
+</menu>

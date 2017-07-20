@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Views.Activity.LoginActivity">
+
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/loginProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/ScrollView_loginForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/LLayout_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_shadow"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <!--<ImageView
+                android:id="@+id/imageView1Header"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo_rgph"
+                android:layout_gravity="bottom"
+                />-->
+            <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/logo_rgph"
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/msg_TitreAccueil"
+                android:id="@+id/tv_titre"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/msg_SousTitreAccueil"
+                android:id="@+id/tv_SousTitre"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/bootstrap_brand_primary"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/label_CompteUtilisateur"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/bootstrap_brand_primary"
+                />
+            <EditText
+                    android:background="@drawable/my_shape"
+                    android:id="@+id/tv_UserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_CompteUtilisateur"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionUnspecified"
+                    android:padding="10dp"
+                    />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/label_MotDePasse"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/bootstrap_brand_primary"
+                android:layout_marginTop="10dp"
+                />
+            <EditText
+                    android:id="@+id/tv_Password"
+                    android:background="@drawable/my_shape"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/label_MotDePasse"
+                    android:imeActionId="@+id/imeActionLabel_SignIn"
+                    android:imeActionLabel="@string/label_Connecter"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:padding="10dp"
+                    />
+
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/label_Connecter"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:padding="20dp"
+                app:bootstrapBrand="primary"
+                app:roundedCorners="true"
+                app:bootstrapSize="xl"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

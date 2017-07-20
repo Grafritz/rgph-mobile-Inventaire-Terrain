@@ -1,0 +1,9 @@
+[
+  {"key":"1", "value":"Aucun domm./Compl.Achevé / reconstr."},
+  {"key":"2", "value":"Endommagé mais utilisable"},
+  {"key":"3", "value":"Endomma. Mais inutilisable / en ruine"},
+  {"key":"4", "value":"Complètement détruite"},
+  {"key":"5", "value":"En réparation / en construction"},
+  {"key":"6", "value":"Autre"},
+  {"key":"7", "value":"Non applicable"}
+]

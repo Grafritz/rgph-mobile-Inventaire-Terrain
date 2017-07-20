@@ -1,18 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ht.ihsi.inventaireterrain.MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".Views.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:id="@+id/ScrollView_loginForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/LL_AdrBat_LocaliteNouveauNom_Rural"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            style="@style/LLStyle"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/logo_rgph"
+                />
 
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/msg_TitreAccueil"
+                android:id="@+id/tv_titre"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="true"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/msg_SousTitreAccueil"
+                android:id="@+id/tv_SousTitre"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/bootstrap_brand_primary"
+                />
+
+            <LinearLayout
+            android:id="@+id/LL_Fomulaire_MAIN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/tv_message"
+                    android:text="@string/msg_DefinitionFormulaire"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/colorRed"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/msg_DefinitionFormulaire"
+                    android:id="@+id/tv_definitionFormulaire"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Fomulaire Rural"
+                    android:id="@+id/btn_FomulaireRural"
+                    android:layout_below="@+id/tv_titre"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:background="@color/bootstrap_brand_warning"
+                    android:padding="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fomulaire Urbain"
+                    android:id="@+id/btn_FomulaireUrbain"
+                    android:layout_gravity="center"
+                    android:background="@color/bootstrap_brand_primary"
+                    android:padding="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/LL_FomulaireSDE"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:padding="20dp"
+                    android:background="@color/bootstrap_gray_lighter"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/msg_SDEInfomation"
+                        android:id="@+id/tv_definitionFormulaire2"
+                        android:textAlignment="center"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SDE"
+                        android:id="@+id/btn_FomulaireSDE"
+                        android:layout_gravity="center"
+                        android:background="@color/bootstrap_brand_success"
+                        android:padding="20dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_GestionCompteUtilisateur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/LabelGestionCompteUtilisateur"
+                        android:textAlignment="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <Button
+                        android:id="@+id/btn_GestionCompteUtilisateur"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Compte Utilisateur"
+                        android:layout_gravity="center"
+                        android:background="@color/bootstrap_brand_danger"
+                        android:padding="20dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20dp"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connecter"
+                android:id="@+id/btn_Connexion"
+                android:layout_gravity="center"
+                android:background="@color/bootstrap_brand_primary"
+                android:padding="20dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tv_Utilisateur"
+                android:text=""
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorRed"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_Deconnecter"
+                android:id="@+id/btn_QuitterApplication"
+                android:layout_gravity="center"
+                android:background="@color/bootstrap_brand_danger"
+                android:padding="20dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="IHSI 2016 | Développer par: Jean Fritz DUVERSEAU"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="10dp"
+                android:id="@+id/textView3" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

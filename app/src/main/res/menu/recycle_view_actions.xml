@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Search, should appear as action button -->
+
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/item_afficher"
+        android:title="@string/label_list_menu_afficher"
+        app:showAsAction="always"
+        android:drawable="@drawable/ic_afficher"/>
+
+    <item android:id="@+id/item_modifier"
+        android:title="@string/label_list_menu_modifier"
+        app:showAsAction="always"
+        android:drawable="@drawable/ic_modifier"/>
+
+    <item android:id="@+id/item_module_menu"
+        android:title="@string/label_list_menu_module_menu"
+        app:showAsAction="always"
+        android:drawable="@drawable/ic_module_menu"/>
+</menu>

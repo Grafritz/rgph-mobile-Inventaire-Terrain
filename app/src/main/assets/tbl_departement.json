@@ -1,0 +1,32 @@
+[
+  {
+    "DeptId":"01",
+    "DeptNom":"Ouest"},
+  {
+    "DeptId":"02",
+    "DeptNom":"Sud-Est"},
+  {
+    "DeptId":"03",
+    "DeptNom":"Nord"},
+  {
+    "DeptId":"04",
+    "DeptNom":"Nord-Est"},
+  {
+    "DeptId":"05",
+    "DeptNom":"Artibonite"},
+  {
+    "DeptId":"06",
+    "DeptNom":"Centre"},
+  {
+    "DeptId":"07",
+    "DeptNom":"Sud"},
+  {
+    "DeptId":"08",
+    "DeptNom":"Grand-Anse"},
+  {
+    "DeptId":"09",
+    "DeptNom":"Nord-Ouest"},
+  {
+    "DeptId":"10",
+    "DeptNom":"Nippes"}
+]

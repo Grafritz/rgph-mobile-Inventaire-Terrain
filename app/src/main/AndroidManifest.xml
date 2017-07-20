@@ -2,20 +2,62 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ht.ihsi.inventaireterrain">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Views.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Views.Activity.FormulaireActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppMyTheme_NoActionBar" />
+        <activity
+            android:name=".Views.Activity.DisplayListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppMyTheme_NoActionBar" />
+        <activity
+            android:name=".Views.Activity.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".Services.ReceiverStartup"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Views.Activity.InventaireSDEActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppMyTheme_NoActionBar" />
+        <activity
+            android:name=".Views.Activity.LogementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Views.Activity.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppMyTheme_NoActionBar" />
+        <activity android:name=".Views.Activity.FormulaireUtilisateur"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>
