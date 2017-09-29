@@ -36,7 +36,7 @@ public class Main {
 
     public static void main(String args[]) throws Exception {
 
-        Schema schema= new Schema(1, DESTINATION_PACKAGE_NAME);
+        Schema schema= new Schema(5, DESTINATION_PACKAGE_NAME);
 
         Entity personnel= schema.addEntity(PERSONNEL_OBJECT);
         personnel.setTableName(TBL_PERSONNEL);

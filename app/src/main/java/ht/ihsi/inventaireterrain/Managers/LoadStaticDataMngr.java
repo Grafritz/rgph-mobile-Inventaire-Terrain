@@ -207,7 +207,8 @@ public class LoadStaticDataMngr  implements AsyncOperationListener {
             Log.i(ToastUtility.TAG + "MainActivity", "loadData_CODE_SDE method is called!");
 
             /*  insert TBL_CODE_SDE */
-            is = assetManager.open(Constant.TBL_CODE_SDE);
+            //is = assetManager.open(Constant.TBL_CODE_SDE);
+            is = assetManager.open(Constant.DATA_SDE_CROIX_DES_BOUQUETS);
             result = " \n SDE:";
             textView.setText(result);
             collectionType = new TypeToken<List<CodeSDE>>(){}.getType();
@@ -217,13 +218,43 @@ public class LoadStaticDataMngr  implements AsyncOperationListener {
             result += " \n \t -Données " + ((codeSDEList != null) ? " ["+codeSDEList.size() +"]":"") +"\n";
             textView.setText(result);
             bulkInsertDaTa(CodeSDE.class, codeSDEList);
-            Log.w(ToastUtility.TAG + "MainActivity", "TBL_CODE_SDE Data inserted");
+            Log.w(ToastUtility.TAG + "MainActivity", result);
 
         } catch (Exception ex) {
             Log.e(ToastUtility.TAG + "MainActivity", "error loade data: " + ex.getMessage() + " / toString:" + ex.toString());
             ex.printStackTrace();
         }
         return result;
+    }
+    public synchronized void loadData_CODE_SDE(Context context, SQLiteDatabase db) {
+        this.database = db;
+        InputStream is =null;
+        Gson gson = new Gson();
+        Type collectionType =null;
+        completedOperations = new CopyOnWriteArrayList<AsyncOperation>();
+        try {
+            AssetManager assetManager = context.getAssets();
+            Log.i(ToastUtility.TAG + "MainActivity", "loadData_CODE_SDE method is called!");
+
+            /*  insert TBL_CODE_SDE */
+            is = assetManager.open(Constant.TBL_CODE_SDE);
+            //is = assetManager.open(Constant.DATA_SDE_CROIX_DES_BOUQUETS);
+            result = " \n SDE:";
+            //textView.setText(result);
+            collectionType = new TypeToken<List<CodeSDE>>(){}.getType();
+            result += " \n \t -Lecture du fichier JSON";
+            //textView.setText(result);
+            List<CodeSDE> codeSDEList = gson.fromJson(getStringJson(is), collectionType);
+            result += " \n \t -Données " + ((codeSDEList != null) ? " ["+codeSDEList.size() +"]":"") +"\n";
+            //textView.setText(result);
+            bulkInsertDaTa(CodeSDE.class, codeSDEList);
+            Log.w(ToastUtility.TAG + "MainActivity", result);
+
+        } catch (Exception ex) {
+            Log.e(ToastUtility.TAG + "MainActivity", "error loade data: " + ex.getMessage() + " / toString:" + ex.toString());
+            ex.printStackTrace();
+        }
+        //return result;
     }
 
     public synchronized String loadData_VQSE(Context context, SQLiteDatabase db, TextView textView) {

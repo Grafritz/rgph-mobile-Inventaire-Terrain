@@ -7,15 +7,15 @@
     <item android:id="@+id/item_afficher"
         android:title="@string/label_list_menu_afficher"
         app:showAsAction="always"
-        android:drawable="@drawable/ic_afficher"/>
+        android:icon="@drawable/ic_afficher"/>
 
     <item android:id="@+id/item_modifier"
         android:title="@string/label_list_menu_modifier"
         app:showAsAction="always"
-        android:drawable="@drawable/ic_modifier"/>
+        android:icon="@drawable/ic_modifier"/>
 
     <item android:id="@+id/item_module_menu"
         android:title="@string/label_list_menu_module_menu"
         app:showAsAction="always"
-        android:drawable="@drawable/ic_module_menu"/>
+        android:icon="@drawable/ic_module_menu"/>
 </menu>

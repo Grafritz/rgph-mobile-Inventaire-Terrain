@@ -16,6 +16,7 @@ public  interface Constant {
     String DATA_USAGE_BATIMENT = "data_usage_batiment.json";
     String DATA_TBL_PERSONNEL = "data_personnel.json";
     String TBL_CODE_SDE = "data_sde.json";
+    String DATA_SDE_CROIX_DES_BOUQUETS = "data_sde_cdb_sec_petit_bois.json";
 
     String MODULE_NAME_BATIMENT = "Batiments";
     String MODULE_NAME_LOGEMENT = "Logements";

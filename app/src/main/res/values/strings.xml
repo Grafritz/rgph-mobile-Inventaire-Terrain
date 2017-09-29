@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"><b>Actualisation Cartographique</b></string>
+    <string name="app_name"><b>IHSI - Actualisation Cartographique</b></string>
     <string name="msg_TitreAccueil"><b>Institut Haïtien de Statistique et d\'Informatique <strong>(IHSI)</strong></b></string>
     <string name="msg_SousTitreAccueil">Recencement Général de la Population et de l\'habitat de 2016</string>
     <string name="label_NumeroBat">Nunéro Bâtiment</string>

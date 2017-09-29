@@ -1,6 +1,8 @@
 package ht.ihsi.inventaireterrain.Views.Adapters;
 
 import android.content.Context;
+import android.support.v7.view.menu.MenuBuilder;
+import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -108,7 +110,8 @@ public class DisplayListAdapter extends RecyclerView.Adapter<DisplayListAdapter.
 
         public void showContextMenu(View v){
             PopupMenu popup = new PopupMenu(v.getContext(), v);
-            popup.inflate(R.menu.recycle_view_actions);
+            popup.getMenuInflater().inflate(R.menu.recycle_view_actions, popup.getMenu());
+            //popup.inflate(R.menu.recycle_view_actions);
 
             if(listType==Constant.LIST_LOGEMENT){
                 popup.getMenu().removeItem(R.id.item_module_menu);
@@ -140,9 +143,12 @@ public class DisplayListAdapter extends RecyclerView.Adapter<DisplayListAdapter.
                     return true;
                 }
             });
-            popup.setGravity(Gravity.RIGHT);
-            popup.show();
-
+            //popup.setGravity(Gravity.RIGHT);
+            //popup.show();
+            MenuPopupHelper menuPopupHelper = new MenuPopupHelper(context, (MenuBuilder)popup.getMenu(), v);
+            menuPopupHelper.setForceShowIcon(true);
+            menuPopupHelper.setGravity(Gravity.RIGHT);
+            menuPopupHelper.show();
         }
 
         public String getModuleName(){

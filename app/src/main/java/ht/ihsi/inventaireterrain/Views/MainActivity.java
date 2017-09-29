@@ -155,36 +155,41 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 default:
             }
         } catch (Exception ex) {
-            ToastUtility.LogCat("Exception-onClick(): getMessage: " + ex.getMessage() + " \n toString: " + ex.toString());
+            ToastUtility.LogCat("Exception-onClick(): getMessage: ", ex);
             ex.printStackTrace();
         }
     }
 
     private void GetFormBatiment_orList(Shared_Preferences SPref, int type_inventaire, long id_inventaire) {
-        ToastUtility.LogCat("W","INSIDE GetFormBatiment_orList() : PARAM_TYPE_FORMULAIRE:"+type_inventaire + " / PARAM_ID:"+id_inventaire );
-        CheckPrefIsUseConnected(true);
-        if (!cancel) {
-            // Verifier si l'appareil est deja configurer et pour quel formulaire
-            if (SPref.getIsConfigured()) {
-                long nbrSDE = queryRecordMngr.countAllInventaireSDE();
-                if( nbrSDE <= 0 ){
-                    // Sinon Verifier si l'appareil contient au moin une SDE
-                    getFormulaire_InventaireSDE(type_inventaire, id_inventaire);
-                }else{
-                    // Verifier s'il existe deja des batiment deja enregistrer pour la SDE en cours
-                    long nbrBat = queryRecordMngr.countBatimentByIdInventaire(id_inventaire);
-                    if(nbrBat > 0){
-                        // On affiche la liste des batiments par SDE
-                        showListView(getString(R.string.label_Batiment) + " [" + Tools.GetStringTypeInventaire( type_inventaire ,"") + " ]" , Constant.LIST_BATIMENT, type_inventaire, id_inventaire );
-                    }else{
-                        // Sinon afficher le formulaire pour la saisie des informations du batiment
-                        getFormulaire(type_inventaire, id_inventaire);
+        try {
+            ToastUtility.LogCat("W", "INSIDE GetFormBatiment_orList() : PARAM_TYPE_FORMULAIRE:" + type_inventaire + " / PARAM_ID:" + id_inventaire);
+            CheckPrefIsUseConnected(true);
+            if (!cancel) {
+                // Verifier si l'appareil est deja configurer et pour quel formulaire
+                if (SPref.getIsConfigured()) {
+                    long nbrSDE = queryRecordMngr.countAllInventaireSDE();
+                    if (nbrSDE <= 0) {
+                        // Sinon Verifier si l'appareil contient au moin une SDE
+                        getFormulaire_InventaireSDE(type_inventaire, id_inventaire);
+                    } else {
+                        // Verifier s'il existe deja des batiment deja enregistrer pour la SDE en cours
+                        long nbrBat = queryRecordMngr.countBatimentByIdInventaire(id_inventaire);
+                        if (nbrBat > 0) {
+                            // On affiche la liste des batiments par SDE
+                            showListView(getString(R.string.label_Batiment) + " [" + Tools.GetStringTypeInventaire(type_inventaire, "") + " ]", Constant.LIST_BATIMENT, type_inventaire, id_inventaire);
+                        } else {
+                            // Sinon afficher le formulaire pour la saisie des informations du batiment
+                            getFormulaire(type_inventaire, id_inventaire);
+                        }
                     }
+                } else {
+                    // Sinon Verifier si l'appareil n'est pas configurer
+                    getFormulaire_InventaireSDE(type_inventaire, id_inventaire);
                 }
-            } else {
-                // Sinon Verifier si l'appareil n'est pas configurer
-                getFormulaire_InventaireSDE(type_inventaire, id_inventaire);
             }
+        } catch (Exception ex) {
+            ToastUtility.LogCat("Exception-GetFormBatiment_orList(): ", ex);
+            ex.printStackTrace();
         }
     }
 
@@ -350,7 +355,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 tv_Utilisateur.setText(message);
             }
         }catch (Exception ex) {
-            ToastUtility.LogCat("Exception-CheckPrivilegeUser(): getMessage: " + ex.getMessage() + " \n toString: " + ex.toString());
+            ToastUtility.LogCat("Exception-CheckPrivilegeUser(): getMessage: ", ex);
             ex.printStackTrace();
         }
     }

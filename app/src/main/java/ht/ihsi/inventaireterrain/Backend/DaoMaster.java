@@ -18,6 +18,7 @@ import ht.ihsi.inventaireterrain.Backend.BatimentDao;
 import ht.ihsi.inventaireterrain.Backend.LogementDao;
 import ht.ihsi.inventaireterrain.Backend.DepartementDao;
 import ht.ihsi.inventaireterrain.Backend.CommuneDao;
+import ht.ihsi.inventaireterrain.Backend.Update.DataBaseUpgrade;
 import ht.ihsi.inventaireterrain.Backend.VqseDao;
 import ht.ihsi.inventaireterrain.Backend.CodeSDEDao;
 import ht.ihsi.inventaireterrain.Managers.LoadStaticDataMngr;
@@ -28,7 +29,7 @@ import ht.ihsi.inventaireterrain.Utilities.ToastUtility;
  * Master of DAO (schema version 1): knows all DAOs.
 */
 public class DaoMaster extends AbstractDaoMaster {
-    public static final int SCHEMA_VERSION = 4;
+    public static final int SCHEMA_VERSION = 5;
 
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(SQLiteDatabase db, boolean ifNotExists) {
@@ -74,16 +75,19 @@ public class DaoMaster extends AbstractDaoMaster {
     
     /** WARNING: Drops all table on Upgrade! Use only during development. */
     public static class DevOpenHelper extends OpenHelper {
+        private Context context;
         public DevOpenHelper(Context context, String name, CursorFactory factory) {
             super(new DatabaseContext(context), name, factory);
-
+            this.context = context;
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             Log.i(ToastUtility.TAG + "greenDAO", "Upgrading schema from version " + oldVersion + " to " + newVersion + " by dropping all tables");
-            dropAllTables(db, true);
-            onCreate(db);
+
+            DataBaseUpgrade.onUpgrade(context, db, oldVersion, newVersion);
+            //dropAllTables(db, true);
+            //onCreate(db);
 
         }
     }

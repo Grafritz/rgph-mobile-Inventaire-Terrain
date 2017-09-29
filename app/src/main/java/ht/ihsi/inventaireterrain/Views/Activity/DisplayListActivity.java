@@ -64,7 +64,8 @@ public class DisplayListActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_list);
+        setContentView(R.layout.activity_display_list_2);
+
         try {
             LLGrandTitre = (LinearLayout) findViewById(R.id.LLGrandTitre);
             tv_GrandTitre = (TextView) findViewById(R.id.tv_GrandTitre);
@@ -158,7 +159,7 @@ public class DisplayListActivity extends BaseActivity implements View.OnClickLis
             //new AsynDisplayDataListTask().execute();
         }catch (Exception ex) {
             ToastUtility.ToastMessage(getApplicationContext(), " ERREUR : \n toString: " + ex.toString());
-            ToastUtility.LogCat("Exception-onCreate(): getMessage: " + ex.getMessage() + " \n toString: " + ex.toString());
+            ToastUtility.LogCat("Exception-onCreate(): getMessage: ", ex);
             ex.printStackTrace();
         }
     }
@@ -353,7 +354,7 @@ public class DisplayListActivity extends BaseActivity implements View.OnClickLis
             }
             ToastUtility.LogCat(this, "goToMenu() : ... ... listType [ "+listType+" ] ");
         }catch (Exception ex) {
-            ToastUtility.LogCat(this, "Exception:goToMenu() - getMessage:" + ex.getMessage() + " / toString:" + ex.toString());
+            ToastUtility.LogCat(this, "Exception:goToMenu() - getMessage:", ex);
             ex.printStackTrace();
         }
     }
@@ -394,7 +395,7 @@ public class DisplayListActivity extends BaseActivity implements View.OnClickLis
             }
         }catch (Exception ex) {
             ToastUtility.ToastMessage(getApplicationContext(), " ERREUR : \n toString: " + ex.toString());
-            ToastUtility.LogCat("Exception-onClick(): getMessage: " + ex.getMessage() + " \n toString: " + ex.toString());
+            ToastUtility.LogCat("Exception-onClick(): getMessage: ", ex);
             ex.printStackTrace();
         }
     }
@@ -431,8 +432,8 @@ public class DisplayListActivity extends BaseActivity implements View.OnClickLis
                     targetList.addAll(queryRecordMngr.searchListProfilUser(SPref));
                 }
             }catch (Exception ex) {
-                ToastUtility.ToastMessage(getApplicationContext(), " ERREUR : \n toString: " + ex.toString());
-                ToastUtility.LogCat("E", "Exception:AsynDisplayDataListTask-doInBackground() - getMessage:" + ex.getMessage() + " / toString:" + ex.toString());
+                ToastUtility.ToastMessage(DisplayListActivity.this, " ERREUR : \n toString: " + ex.toString());
+                ToastUtility.LogCat( "Exception:AsynDisplayDataListTask-doInBackground() - getMessage:", ex);
                 ex.printStackTrace();
             }
             return 1;
@@ -460,7 +461,7 @@ public class DisplayListActivity extends BaseActivity implements View.OnClickLis
                 }
             }catch (Exception ex) {
                 ToastUtility.ToastMessage(getApplicationContext(), " ERREUR : \n toString: " + ex.toString());
-                ToastUtility.LogCat("E", "Exception:AsynDisplayDataListTask-onPostExecute() - getMessage:" + ex.getMessage() + " / toString:" + ex.toString());
+                ToastUtility.LogCat( "Exception:AsynDisplayDataListTask-onPostExecute() - getMessage:", ex);
                 ex.printStackTrace();
             }
         }

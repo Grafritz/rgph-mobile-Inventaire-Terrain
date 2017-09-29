@@ -27,10 +27,12 @@
             android:name=".Views.Activity.FormulaireActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppMyTheme_NoActionBar" />
+
         <activity
             android:name=".Views.Activity.DisplayListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppMyTheme_NoActionBar" />
+
         <activity
             android:name=".Views.Activity.LoginActivity"
             android:screenOrientation="portrait" />

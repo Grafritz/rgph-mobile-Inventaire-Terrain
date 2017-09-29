@@ -39,6 +39,21 @@ public class ToastUtility {
         String TAG2 = TAG + context.getClass().getSimpleName();
         Log.i(TAG2, msg);
     }
+
+    public static void LogCat(Context context, String msg, Exception ex) {
+        String TAG2 = TAG + context.getClass().getSimpleName();
+        Log.w(TAG2, msg, ex);
+    }
+    public static void LogCat(Context context, Exception ex) {
+        String TAG2 = TAG + context.getClass().getSimpleName();
+        Log.w(TAG2, ex);
+    }
+    public static void LogCat(String msg, Exception ex) {
+        Log.w(TAG, msg, ex);
+    }
+    public static void LogCat(Exception ex) {
+        Log.w(TAG, ex);
+    }
     public static void LogCat( String msg) {
         Log.e(TAG, msg);
     }

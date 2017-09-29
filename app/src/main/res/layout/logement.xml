@@ -148,6 +148,7 @@
                     android:hint="@string/label_NbrHommeVivant"
                     android:inputType="number"
                     android:maxLines="1"
+                    android:maxLength="3"
                     android:singleLine="true"
                     />
                 </LinearLayout>
@@ -174,6 +175,7 @@
                     android:hint="@string/label_NbrFemmeVivant"
                     android:inputType="number"
                     android:maxLines="1"
+                    android:maxLength="3"
                     android:singleLine="true"
                     />
                 </LinearLayout>
