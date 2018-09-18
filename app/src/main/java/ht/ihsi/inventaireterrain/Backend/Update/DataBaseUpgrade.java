@@ -22,6 +22,8 @@ public class DataBaseUpgrade
             switch (oldVersion) {
                 case UPGRADE_TO_V4_TO_V5:
                     MiseAjour_V4_to_V5(context, db, true);
+                case 5:
+                    //MiseAjour_V4_to_V5(context, db, true);
                     break;
 
             }

@@ -207,8 +207,8 @@ public class LoadStaticDataMngr  implements AsyncOperationListener {
             Log.i(ToastUtility.TAG + "MainActivity", "loadData_CODE_SDE method is called!");
 
             /*  insert TBL_CODE_SDE */
-            //is = assetManager.open(Constant.TBL_CODE_SDE);
-            is = assetManager.open(Constant.DATA_SDE_CROIX_DES_BOUQUETS);
+            is = assetManager.open(Constant.TBL_CODE_SDE);
+            //is = assetManager.open(Constant.DATA_SDE_CROIX_DES_BOUQUETS);
             result = " \n SDE:";
             textView.setText(result);
             collectionType = new TypeToken<List<CodeSDE>>(){}.getType();
