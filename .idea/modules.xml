@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rgph-mobile-Inventaire-Terrain.iml" filepath="$PROJECT_DIR$/rgph-mobile-Inventaire-Terrain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rgph-mobile-Inventaire-Terrain_BC_20-07-2018.iml" filepath="$PROJECT_DIR$/rgph-mobile-Inventaire-Terrain_BC_20-07-2018.iml" />
       <module fileurl="file://$PROJECT_DIR$/rgph-mobile-inventaireterrain.generator/rgph-mobile-inventaireterrain.generator.iml" filepath="$PROJECT_DIR$/rgph-mobile-inventaireterrain.generator/rgph-mobile-inventaireterrain.generator.iml" />
     </modules>
   </component>
